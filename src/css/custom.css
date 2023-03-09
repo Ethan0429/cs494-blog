@@ -1,0 +1,90 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ifm-color-primary: #01e8e4;
+  --ifm-color-primary-dark: #01dfdc;
+  --ifm-color-primary-darker: #01cbc8;
+  --ifm-color-primary-darkest: #01b7b4;
+  --ifm-color-primary-light: #01e8e4;
+  --ifm-color-primary-lighter: #01dfdc;
+  --ifm-color-primary-lightest: #01cbc8;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --ifm-color-primary: #01e8e4;
+  --ifm-color-primary-dark: #01dfdc;
+  --ifm-color-primary-darker: #01cbc8;
+  --ifm-color-primary-darkest: #01b7b4;
+  --ifm-color-primary-light: #01e8e4;
+  --ifm-color-primary-lighter: #01dfdc;
+  --ifm-color-primary-lightest: #01cbc8;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+.code-block-error-line {
+  background-color: #ff000020;
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+  border-left: 3px solid #ff000080;
+}
+
+article p a {
+  color: #fc0845;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+strong {
+  color: #01e8e4;
+}
+em {
+  color: #00ff66;
+}
+
+code {
+  color: #82aafe;
+  background-color: #181539;
+}
+
+g:hover > rect {
+  fill: #ffffff !important;
+  transition: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+a:hover .nodeLabel {
+  color: black !important;
+  transition: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+u {
+  text-decoration: none;
+  border-bottom: 1px solid #dd1e4f;
+}
+
+.main-wrapper {
+  background-color: #090b10;
+}
+
+.navbar {
+  background-color: #0c1017;
+}
+
+a {
+  color: #01e8e4;
+}
