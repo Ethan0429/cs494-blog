@@ -19,7 +19,7 @@ export default function LinkWithIcon({
   return (
     <Link to={to} className={clsx("group", className)}>
       {text}
-      <LinkIcon className="ml-0.5 translate-y-0.5 group-hover:fill-[#00ff37]" />
+      <LinkIcon className="ml-0.5 translate-y-0.5 group-hover:fill-[#01e8e4]" />
     </Link>
   );
 }
