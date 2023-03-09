@@ -6,14 +6,15 @@ constexpr int MATRIX_SIZE = 8;
 constexpr int ANCHOR1 = 3;
 constexpr int ANCHOR2 = 4;
 constexpr int LEFT = 0;
+constexpr int TOP = 0;
 constexpr int RIGHT = 7;
+constexpr int BOTTOM = 7;
 
 class Player {
     private:
     int input;
     int col;
     int row1 = ANCHOR1, row2 = ANCHOR2;
-    int speed = 1;
 
     public:
     Player(int input, int col) {
@@ -29,6 +30,7 @@ class Player {
         return row2;
     }
 
+    // calculate the move based on the potentiometer value mapped to a range of -3 to 3
     int getMove() const {
         int potVal = analogRead(input);
         if (potVal > 900) {
@@ -54,6 +56,7 @@ class Player {
         }
     }
 
+    // update the paddle's position
     void update() {
         int move = getMove();
         row1 = ANCHOR1 + move;
@@ -62,6 +65,8 @@ class Player {
 
     void drawPaddle() {
         digitalWrite(cols[col], HIGH);
+
+        // set all rows that are not the paddle's rows to HIGH
         for (int i = 0; i < MATRIX_SIZE; i++) {
             if (i != row1 && i != row2) {
                 digitalWrite(rows[i], HIGH);
@@ -101,6 +106,8 @@ class Pong {
 
     void drawBall() {
         digitalWrite(cols[ballX], HIGH);
+
+        // set all rows that are not the ball's row to HIGH
         for (int i = 0; i < MATRIX_SIZE; i++) {
             if (i != ballY) {
                 digitalWrite(rows[i], HIGH);
@@ -118,7 +125,7 @@ class Pong {
         ballY += ballSpeedY;
 
         // bounce ball off top and bottom edges
-        if (ballY == LEFT || ballY == RIGHT) {
+        if (ballY == TOP || ballY == BOTTOM) {
             ballSpeedY = -ballSpeedY;
         }
 
@@ -145,6 +152,7 @@ class Pong {
         return false;
     }
 
+    // reset ball to center when a player scores
     void resetBall() {
         ballX = 3;
         ballY = 3;

@@ -59,6 +59,8 @@ constexpr int ANCHOR2 = 4;
 // left and right edges of the matrix
 constexpr int LEFT = 0;
 constexpr int RIGHT = 7;
+constexpr int TOP = 0;
+constexpr int BOTTOM = 7;
 ```
 
 ### Player Class
@@ -67,17 +69,29 @@ The `Player` class is responsible for handling the input and movement of each pl
 
 It implements the following methods:
 
+<div class="flex flex-row justify-between p-1 space-x-10">
+
+<div class="w-1/2">
+
 - `getMove()`: returns the direction the paddle should move in, based on the potentiometer's value. It works by mapping the potentiometer's value to a range of -3 to 3, where -3 is the top of the paddle and 3 is the bottom of the paddle. The mapping is as follows:
 
-  | Potentiometer Value | Direction |
-  | ------------------- | --------- |
-  | 900+                | -3        |
-  | 800-900             | -2        |
-  | 600-800             | -1        |
-  | 500-600             | 0         |
-  | 300-500             | 1         |
-  | 200-300             | 2         |
-  | 200-                | 3         |
+</div>
+<div class="grow">
+
+###### Potentiometer Value to Direction Mapping
+
+| Potentiometer Value | Direction |
+| ------------------- | --------- |
+| 900+                | -3        |
+| 800-900             | -2        |
+| 600-800             | -1        |
+| 500-600             | 0         |
+| 300-500             | 1         |
+| 200-300             | 2         |
+| 200-                | 3         |
+
+</div>
+</div>
 
 - `update()`: updates the paddle's position based on the potentiometer's value.
 
@@ -219,7 +233,7 @@ private:
         ballY += ballSpeedY;
 
         // bounce ball off top and bottom edges
-        if (ballY == LEFT || ballY == RIGHT) {
+        if (ballY == TOP || ballY == BOTTOM) {
             ballSpeedY = -ballSpeedY;
         }
 
