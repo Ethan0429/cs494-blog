@@ -88,3 +88,16 @@ u {
 a {
   color: #01e8e4;
 }
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #01e89b;
+}
+
+/* select li dots */
+li::marker {
+  color: #82aafd;
+}

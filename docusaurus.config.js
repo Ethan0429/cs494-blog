@@ -73,7 +73,7 @@ const config = {
         playgroundPosition: "bottom",
       },
       // Replace with your project's social card
-      image: "img/cs102.png",
+      image: "img/cs494.png",
       navbar: {
         // title: "CS 102 Writeups",
         // logo: {
