@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcs494_blog=self.webpackChunkcs494_blog||[]).push([[659],{9908:s=>{s.exports=JSON.parse('{"label":"game","permalink":"/cs494-blog/blog/tags/game","allTagsPath":"/cs494-blog/blog/tags","count":1}')}}]);

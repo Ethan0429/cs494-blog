@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcs494_blog=self.webpackChunkcs494_blog||[]).push([[711],{2368:s=>{s.exports=JSON.parse('{"label":"HCI","permalink":"/cs494-blog/blog/tags/hci","allTagsPath":"/cs494-blog/blog/tags","count":1}')}}]);
